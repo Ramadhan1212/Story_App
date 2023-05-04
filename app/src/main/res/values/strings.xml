@@ -1,15 +1,51 @@
 <resources>
-    <string name="app_name">Story App</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="more_menu">More Menu</string>
-    <string name="log_out">Log Out</string>
-    <string name="create_new_story">create new story</string>
+    <string name="app_name">StoryApp</string>
+    <string name="google_api_key">AIzaSyBwMhFItKbJEa5-CRmMFWbt1WFGupAd6xs</string>
 
-    <string name="storyImage">image %s</string>
-    <string name="storyDescription">desc %s</string>
-    <string name="storyName">name %s</string>
-    <string name="image_detail">Image detail</string>
-    <string name="map">Map</string>
+
+    <string name="logout">logout</string>
+    <string name="greet_main_activity">Hello, %1$s!</string>
+    <string name="login">login</string>
+    <string name="go_to">go to</string>
+    <string name="create_account">create account</string>
+    <string name="hint_password">Enter Password</string>
+    <string name="hint_email">Enter Email</string>
+    <string name="hint_name">Enter Name</string>
+    <string name="register">register</string>
+    <string name="join_our_community">join our community</string>
+    <string name="data_have_to_be_valid">data have to be valid</string>
+    <string name="welcome_to">welcome To</string>
+    <string name="remember_me">Remember me</string>
+    <string name="sign_in">sign in</string>
+    <string name="sign_up">sign up</string>
+    <string name="make_account_text">Don\'t have an account? made one</string>
+    <string name="name">name</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
+
+    <string name="appwidget_text">STORY APP BANNER</string>
+    <string name="empty_text">NO DATA</string>
     <string name="retry">Retry</string>
-    <string name="data_not_loaded">Data not loaded</string>
+    <string name="capture_image_button">Capture image button</string>
+    <string name="flip_camera">Flip Camera</string>
+    <string name="preview_profile_image">preview_profile_image</string>
+    <string name="language_setting">language setting</string>
+    <string name="add_button">add button</string>
+    <string name="profile_image">profile image</string>
+    <string name="take_photo">Take photo</string>
+    <string name="gallery">Gallery</string>
+    <string name="enter_description">Enter Description</string>
+    <string name="upload">upload</string>
+    <string name="map_story">Map Story</string>
+    <string name="title_activity_maps">Maps Activity</string>
+    <string name="image_failed_load">Image failed to load</string>
+    <string name="camera_failed_load">Camera is failed to load</string>
+    <string name="email_should_be_right">Email should be in the right format</string>
+    <string name="permission_not_granted">Permission not granted</string>
+    <string name="choose_a_picture">Choose a picture</string>
+    <string name="failed_request">Failed Request</string>
+    <string name="insert_picture_first">Insert a picture first</string>
+    <string name="description_should_be_not_empty">description should not be empty</string>
+    <string name="password_should_at_least_have_6_letters">Password should at least have 6 letters</string>
+    <string name="failed_make_account">failed make an account</string>
 </resources>
