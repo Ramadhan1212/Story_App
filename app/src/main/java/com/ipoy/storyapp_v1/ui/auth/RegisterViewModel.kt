@@ -1,36 +1,33 @@
-package com.ipoy.storyapp_v1.ui
+package com.ipoy.storyapp_v1.ui.auth
 
 import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.ipoy.storyapp_v1.model.LoginResult
-import com.ipoy.storyapp_v1.model.UserLoginResponse
+import com.ipoy.storyapp_v1.R
+import com.ipoy.storyapp_v1.model.UserRegisterResponse
 import com.ipoy.storyapp_v1.network.StoryAppRetrofitInstance
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class LoginViewModel: ViewModel() {
-
-    private var _loginResponse = MutableLiveData<LoginResult>()
-    val loginResponse = _loginResponse
+class RegisterViewModel: ViewModel() {
 
     private var _isLoading = MutableLiveData<Boolean>()
     val isLoading = _isLoading
 
-    fun login(email: String, password: String, context: Context) {
+    fun requestCreateAccount(name: String, email: String, password: String, context: Context) {
         _isLoading.value = true
         StoryAppRetrofitInstance.apiService!!
-            .getLoginUser(email, password)
-            .enqueue(object: Callback<UserLoginResponse> {
+            .createAccount(name, email, password)
+            .enqueue(object: Callback<UserRegisterResponse> {
                 override fun onResponse(
-                    call: Call<UserLoginResponse>,
-                    response: Response<UserLoginResponse>
+                    call: Call<UserRegisterResponse>,
+                    response: Response<UserRegisterResponse>
                 ) {
                     if(response.isSuccessful) {
-                        _loginResponse.postValue(response.body()?.loginResult)
+                        Toast.makeText(context, response.body()?.message.toString(), Toast.LENGTH_SHORT).show()
                         _isLoading.value = false
                     } else {
                         val jsonObj = JSONObject(response.errorBody()!!.charStream().readText())
@@ -39,10 +36,11 @@ class LoginViewModel: ViewModel() {
                     }
                 }
 
-                override fun onFailure(call: Call<UserLoginResponse>, t: Throwable) {
+                override fun onFailure(call: Call<UserRegisterResponse>, t: Throwable) {
                     _isLoading.value = false
-                    Toast.makeText(context, "Failed request to server", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, context.getString(R.string.failed_make_account), Toast.LENGTH_SHORT).show()
                 }
+
             })
     }
 }

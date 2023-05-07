@@ -1,4 +1,4 @@
-package com.ipoy.storyapp_v1.ui
+package com.ipoy.storyapp_v1.ui.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

@@ -14,8 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ipoy.storyapp_v1.R
 import com.ipoy.storyapp_v1.databinding.ActivityMainBinding
 import com.ipoy.storyapp_v1.databinding.ItemStoryUserBinding
-import com.ipoy.storyapp_v1.ui.LoginActivity
+import com.ipoy.storyapp_v1.ui.auth.LoginActivity
 import com.ipoy.storyapp_v1.ui.addstory.FormAddStoryActivity
+import com.ipoy.storyapp_v1.ui.addstory.FormAddStoryActivity.Companion.TOKEN
 import com.ipoy.storyapp_v1.ui.detail.DetailActivity
 
 class MainActivity : AppCompatActivity() {
@@ -66,6 +67,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, FormAddStoryActivity::class.java)
             intent.putExtra(FormAddStoryActivity.TOKEN, token)
             startActivity(intent)
+            finish()
         }
         binding.greetMainActivity.text = getString(R.string.greet_main_activity, name)
     }
@@ -89,7 +91,7 @@ class MainActivity : AppCompatActivity() {
                 finish()
                 true
             }
-            else -> false
+            else -> true
         }
     }
 
@@ -103,4 +105,5 @@ class MainActivity : AppCompatActivity() {
             storiesAdapter.submitData(lifecycle,it)
         }
     }
+
 }

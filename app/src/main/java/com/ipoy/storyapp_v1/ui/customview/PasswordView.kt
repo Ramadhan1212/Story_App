@@ -38,7 +38,7 @@ class PasswordView: AppCompatEditText {
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                background = if(text.toString().length < 6 && text!!.isNotEmpty()) errorBackground else roundedBackground
+                background = if(text.toString().length < 8 && text!!.isNotEmpty()) errorBackground else roundedBackground
             }
 
             override fun afterTextChanged(p0: Editable?) {
