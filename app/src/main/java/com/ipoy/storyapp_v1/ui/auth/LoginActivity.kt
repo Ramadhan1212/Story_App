@@ -10,10 +10,9 @@ import android.view.View
 import android.widget.Toast
 import androidx.core.app.ActivityOptionsCompat
 import androidx.lifecycle.ViewModelProvider
+import com.ipoy.storyapp_v1.MainActivity
 import com.ipoy.storyapp_v1.R
 import com.ipoy.storyapp_v1.databinding.ActivityLoginBinding
-import com.ipoy.storyapp_v1.ui.stories.MainActivity
-
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
 

@@ -12,11 +12,11 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.ipoy.storyapp_v1.MainActivity
 import com.ipoy.storyapp_v1.R
 import com.ipoy.storyapp_v1.databinding.ActivityFormAddStoryBinding
 import com.ipoy.storyapp_v1.model.UserRegisterResponse
 import com.ipoy.storyapp_v1.network.StoryAppRetrofitInstance
-import com.ipoy.storyapp_v1.ui.stories.MainActivity
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -49,7 +49,6 @@ class FormAddStoryActivity : AppCompatActivity() {
         binding.buttonCamerax.setOnClickListener { startCameraX() }
         binding.buttonGallery.setOnClickListener { startGallery() }
         binding.buttonUpload.setOnClickListener { uploadImage(token!!) }
-
     }
 
     companion object {

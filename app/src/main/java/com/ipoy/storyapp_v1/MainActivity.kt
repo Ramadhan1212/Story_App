@@ -1,4 +1,4 @@
-package com.ipoy.storyapp_v1.ui.stories
+package com.ipoy.storyapp_v1
 
 import android.content.Context
 import android.content.Intent
@@ -11,13 +11,17 @@ import androidx.activity.viewModels
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ipoy.storyapp_v1.R
 import com.ipoy.storyapp_v1.databinding.ActivityMainBinding
 import com.ipoy.storyapp_v1.databinding.ItemStoryUserBinding
 import com.ipoy.storyapp_v1.ui.auth.LoginActivity
 import com.ipoy.storyapp_v1.ui.addstory.FormAddStoryActivity
 import com.ipoy.storyapp_v1.ui.addstory.FormAddStoryActivity.Companion.TOKEN
 import com.ipoy.storyapp_v1.ui.detail.DetailActivity
+import com.ipoy.storyapp_v1.ui.map.MapsActivity
+import com.ipoy.storyapp_v1.ui.stories.LoadingStateAdapter
+import com.ipoy.storyapp_v1.ui.stories.StoriesAdapter
+import com.ipoy.storyapp_v1.ui.stories.StoriesViewModel
+import com.ipoy.storyapp_v1.ui.stories.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 
@@ -65,13 +69,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.addButton.setOnClickListener {
             val intent = Intent(this@MainActivity, FormAddStoryActivity::class.java)
-            intent.putExtra(FormAddStoryActivity.TOKEN, token)
+            intent.putExtra(TOKEN, token)
             startActivity(intent)
-            finish()
         }
         binding.greetMainActivity.text = getString(R.string.greet_main_activity, name)
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
@@ -81,14 +83,21 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.logout -> {
+            R.id.action_logout_menu -> {
                 preferences.edit().apply {
                     clear()
                     apply()
                 }
                 val loginIntent = Intent(this, LoginActivity::class.java)
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 startActivity(loginIntent)
                 finish()
+                true
+            }
+            R.id.map_story -> {
+                val intent = Intent(this, MapsActivity::class.java)
+                intent.putExtra(MapsActivity.TOKEN, token)
+                startActivity(intent)
                 true
             }
             else -> true

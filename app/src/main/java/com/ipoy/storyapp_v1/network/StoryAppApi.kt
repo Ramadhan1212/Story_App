@@ -32,6 +32,12 @@ interface StoryAppApi {
         @Query("size") size: Int
     ): StoriesResponse
 
+    @GET("stories")
+    fun getAllListStoriesWithMap(
+        @Header("Authorization") authHeader: String,
+        @Query("location") location: String
+    ): Call<StoriesResponse>
+
     @Multipart
     @POST("stories")
     fun postStory(

@@ -24,6 +24,9 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/image_banner_widget_info" />
         </receiver>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_api_key" />
         <activity
             android:name=".ui.addstory.CameraActivity"
             android:exported="false" />
@@ -32,6 +35,9 @@
             android:exported="false" />
         <activity
             android:name=".ui.detail.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.map.MapsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.auth.RegisterActivity"
@@ -46,7 +52,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.stories.MainActivity"
+            android:name=".MainActivity"
             android:exported="false" />
     </application>
 

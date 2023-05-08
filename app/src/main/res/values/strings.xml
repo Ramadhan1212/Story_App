@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">StoryApp</string>
-    <string name="google_api_key">AIzaSyBwMhFItKbJEa5-CRmMFWbt1WFGupAd6xs</string>
-
+    <string name="google_api_key">AIzaSyAimG-vteolfPMQUgswiOqTe26A9qgzCVI</string>
 
     <string name="logout">logout</string>
     <string name="greet_main_activity">Hello, %1$s!</string>
@@ -22,6 +21,9 @@
     <string name="name">name</string>
     <string name="add_widget">Add widget</string>
     <string name="app_widget_description">This is an app widget description</string>
+    <string name="more_menu" translatable="false">More Menu</string>
+    <string name="map" translatable="false">Map</string>
+    <string name="log_out" translatable="false">Log Out</string>
 
     <string name="appwidget_text">STORY APP BANNER</string>
     <string name="empty_text">NO DATA</string>
