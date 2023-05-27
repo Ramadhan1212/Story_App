@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.addstory.CameraActivity">
+    tools:context=".ui.upload.CameraActivity">
 
     <androidx.camera.view.PreviewView
         android:id="@+id/viewFinder"
@@ -14,7 +14,6 @@
 
     <ImageView
         android:id="@+id/captureImage"
-        android:contentDescription="@string/capture_image_button"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginBottom="16dp"
@@ -25,7 +24,6 @@
 
     <ImageView
         android:id="@+id/switchCamera"
-        android:contentDescription="@string/flip_camera"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"

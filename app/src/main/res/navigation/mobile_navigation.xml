@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.ipoy.storyapp_v1.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_detail_fragment"
+            app:destination="@id/fragment_detail"/>
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/navigation_gmaps"
+        android:name="com.ipoy.storyapp_v1.ui.gmaps.GMapsFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_gmaps" />
+
+    <fragment
+        android:id="@+id/fragment_detail"
+        android:name="com.ipoy.storyapp_v1.ui.detail.DetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_detail"
+        >
+        <argument
+            android:name="photo"
+            app:argType="string"
+            android:defaultValue="default photo"
+            />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="default name"
+            />
+        <argument
+            android:name="description"
+            app:argType="string"
+            android:defaultValue="default description"
+            />
+        <argument
+            android:name="date"
+            app:argType="string"
+            android:defaultValue="default date"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.ipoy.storyapp_v1.ui.profile.ProfileFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
